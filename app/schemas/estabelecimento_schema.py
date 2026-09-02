@@ -12,17 +12,17 @@ class EstabelecimentoBase(BaseModel):
         ..., min_length=14, max_length=14, description="Cadastro nacional de pessoa juridica"
     )
 
-    pix : Optional[str] = Field(
-        ..., None, max_length=255, description="Chave pix do estabelecimento"
+    chave_pix : Optional[str] = Field(
+        ..., max_length=255, description="Chave pix do estabelecimento"
     )
 
 class EstabelecimentoCreate(EstabelecimentoBase):
     pass
 # schema de atualizacao 
 class EstabelecimentoUpdate(BaseModel):
-    nome : Optional[str] = Field(..., None, min_length=2, max_digits=100)
-    cnpj : Optional[str] = Field(..., None, min_length=14, max_digits=14)
-    pix : Optional[str] = Field(..., None, max_digits=100)
+    nome : Optional[str] = Field(..., min_length=2, max_digits=100)
+    cnpj : Optional[str] = Field(..., min_length=14, max_digits=14)
+    chave_pix : Optional[str] = Field(..., max_digits=100)
     ativo : Optional[bool] = None
 # schema de resposta para o cliente
 class EstabelecimentoResponse(EstabelecimentoBase):

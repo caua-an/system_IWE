@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 # A string de conexão reflete as credenciais do seu docker-compose.yml
-# Formato: dialect+driver://username:password@host:port/database
 SQLALCHEMY_DATABASE_URL = "mysql+pymysql://acougue_user:acougue_password@127.0.0.1:3306/acougue_db"
 
 # O 'engine' é o motor que gerencia o pool de conexões com o MySQL

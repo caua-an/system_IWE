@@ -18,3 +18,6 @@ def criar_estabelecimento(db: Session, estabelecimento : EstabelecimentoCreate):
 
 def buscar_estabelecimento_cnpj(db: Session, cnpj:str):
     return db.query(Estabelecimento).filter(Estabelecimento.cnpj == cnpj).first()
+
+def listar_estabelecimento(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(Estabelecimento).offset(skip).limit(limit).all()
