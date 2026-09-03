@@ -21,8 +21,8 @@ class ProdutoBase(BaseModel):
     preco: Decimal = Field(
         ...,
         # garantir preço maior que 0
-        gt=0
-        decimal_places=2
+        gt=0,
+        decimal_places=2,
         description="valor monetario do produto"
     )
 
