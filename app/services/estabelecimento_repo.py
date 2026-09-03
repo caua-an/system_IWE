@@ -6,7 +6,7 @@ def criar_estabelecimento(db: Session, estabelecimento : EstabelecimentoCreate):
     db_estabelecimento = Estabelecimento(
         nome = estabelecimento.nome,
         cnpj = estabelecimento.cnpj,
-        chave_pix = estabelecimento.pix
+        chave_pix = estabelecimento.chave_pix
     )
 
     db.add(db_estabelecimento)
