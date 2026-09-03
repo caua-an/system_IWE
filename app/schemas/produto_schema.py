@@ -12,7 +12,6 @@ class ProdutoBase(BaseModel):
     )
 
     descricao: Optional[str] = Field(
-        ...,
         None,
         max_length=255,
         description="detalhamento do item"
