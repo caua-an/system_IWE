@@ -3,6 +3,7 @@ from app.core.database import engine, Base
 from app.models import estabelecimento as modelo_estabelecimento
 from app.api import estabelecimento as api_estabelecimento
 from app.api import produto as api_produto
+from app.api import cliente as api_cliente
 
 
 
@@ -12,6 +13,7 @@ app = FastAPI(title="Chatbot API - CORE")
 
 app.include_router(api_estabelecimento.router)
 app.include_router(api_produto.router)
+app.include_router(api_cliente.router)
 @app.get("/")
 def health_check():
     return {"status": "API operando e o bd sincro"}
