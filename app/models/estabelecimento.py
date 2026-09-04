@@ -15,6 +15,5 @@ class Estabelecimento(Base):
     chave_pix = Column(String(255), nullable=True)
     ativo = Column(Boolean, default=True)
 
-    # criar relationship com o produto
-
     produtos = relationship("Produto", back_populates="estabelecimento")
+    pedidos = relationship("Pedido", back_populates="estabelecimento")

@@ -13,4 +13,4 @@ class Cliente(Base):
     endereco_entrega = Column(String(255), nullable=True)
     data_cadastro = Column(DateTime(timezone=True), server_default=func.now())
 
-    #LEMBRAR DE COLOCAR RELATIONSHIP COM PEDIDO
+    pedidos = relationship("Pedido", back_populates="cliente")
