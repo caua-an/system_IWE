@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Literal
 from decimal import Decimal
 from datetime import datetime
@@ -44,8 +44,7 @@ class PedidoItemResponse(PedidoItemBase):
     id: int
     pedido_id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # schema base para pedido
@@ -82,5 +81,4 @@ class PedidoResponse(PedidoBase):
     criado_em: datetime
     atualizado_em: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

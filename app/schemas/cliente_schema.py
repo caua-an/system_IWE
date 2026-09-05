@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional
 from datetime import datetime
 
@@ -39,5 +39,4 @@ class ClienteResponse(ClienteBase):
     endereco_entrega: Optional[str] = None
     data_cadastro : datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
